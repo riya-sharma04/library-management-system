@@ -1,0 +1,924 @@
+﻿body {
+    position: relative;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-image: url('images/library management.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+header {
+    position: relative;
+    background-color: #0078D4;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: inherit;
+    height: 30px;
+}
+
+.heading {
+    font-size: xx-large;
+    font-weight: 700;
+    position: absolute;
+    top: 10px;
+    left: 85px;
+}
+
+nav ul {
+    position: relative;
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    margin-top: 5px;
+}
+
+nav a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    nav a:hover {
+        position: relative;
+        text-decoration: underline;
+        color: #D6ECFF;
+    }
+
+.dropdown > span::after {
+    content: "\2304";
+    font-size: 11px;
+    margin-left: 5px;
+    position: relative;
+    bottom: 5px;
+}
+
+.menu-icon {
+    display: block;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 5px;
+    margin: 0;
+}
+
+.no-arrow > span::after {
+    display: none;
+}
+
+.container {
+    position: relative;
+    max-width: 1200px;
+    margin: 2rem auto;
+    min-height: 350px;
+}
+
+.hero {
+    position: relative;
+    color: whitesmoke;
+    text-align: center;
+    padding: 3rem 2rem;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    height: 580px;
+}
+
+    .hero .text {
+        position: relative;
+        color: white;
+        text-shadow: 2px 2px 5px #000000;
+        font-size: 48px;
+        font-weight: 800;
+    }
+
+    .hero .bton {
+        position: absolute;
+        border-style: none;
+        border-color: inherit;
+        border-width: medium;
+        padding: 8px 20px;
+        border-radius: 25px;
+        background-color: white;
+        color: #2c3e50;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+        z-index: 1;
+        left: 522px;
+        top: 276px;
+    }
+
+        .hero .bton:hover {
+            background-color: #f1f1f1;
+            transform: scale(1.05);
+        }
+
+#Image1 {
+    height: 50px;
+    z-index: 1;
+    left: 5px;
+    top: 4px;
+    position: absolute;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    color: white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-size: x-small;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a,
+.logout-link {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    color: black;
+    text-decoration: none;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: x-small;
+    font-family: 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+}
+
+    .dropdown-content a:hover,
+    .logout-link:hover {
+        background-color: #0078D4;
+        color: white;
+    }
+
+.search-container {
+    position: relative;
+    width: 430px;
+    margin: 60px auto 0;
+}
+
+.search-box {
+    width: 100%;
+    height: 48px;
+    padding: 0 55px 0 20px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,.15);
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    left: auto !important;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: #0078D4;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+    .search-icon:hover {
+        color: #005fa3;
+    }
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    z-index: 0;
+}
+
+
+/* =========================================================
+   WHY USE THIS SYSTEM SECTION
+========================================================= */
+
+.features {
+    background: #f8fbff;
+    padding: 160px 20px 70px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.feature-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+    .feature-container h2 {
+        color: #0078D4;
+        font-size: 32px;
+        margin-bottom: 35px;
+    }
+
+.feature-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    width: 240px;
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+    transition: .35s;
+    border-top: 6px solid #0078D4;
+}
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,.20);
+    }
+
+    .feature-card h3 {
+        color: steelblue;
+        margin-bottom: 12px;
+        margin-top: 10px;
+        font-size: 22px;
+    }
+
+    .feature-card p {
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .feature-card i {
+        color: #0078D4;
+        margin-right: 8px;
+        font-size: 38px;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+
+/* =========================================================
+   LIBRARY STATISTICS
+========================================================= */
+
+.statistics {
+    position: relative;
+    margin-top: -130px;
+    z-index: 10;
+    padding: 0 20px 70px;
+    background: transparent;
+}
+
+.stats-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.stats-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    width: 190px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px 18px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.18);
+    transition: .35s;
+    border-top: 5px solid #0078D4;
+}
+
+    .stat-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,.25);
+    }
+
+    .stat-card i {
+        font-size: 36px;
+        color: #0078D4;
+        margin-bottom: 18px;
+    }
+
+.stat-number {
+    display: block;
+    font-size: 42px;
+    font-weight: bold;
+    color: #1A1A1A;
+    margin-bottom: 8px;
+}
+
+.stat-title {
+    color: #444;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    background: #0078D4;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 0;
+    border-top: 3px solid #e6eef7;
+}
+
+    .footer h3 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    .footer p {
+        margin: 8px 0;
+        font-size: 15px;
+    }
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+@media screen and (min-width: 601px) {
+
+    nav {
+        width: auto;
+        position: relative;
+    }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 5px 0 0 0;
+            padding: 0;
+        }
+
+            nav ul li:last-child {
+                position: relative;
+                margin-left: 40px;
+                padding: 0;
+            }
+
+    .no-arrow {
+        position: relative;
+        display: inline-block;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 24px;
+        line-height: 1;
+        padding: 5px;
+        margin: 0;
+        cursor: pointer;
+        color: #ffffff;
+    }
+
+    nav ul li:last-child .dropdown-content {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: auto;
+        min-width: 170px;
+        width: 170px;
+        background-color: white;
+        box-sizing: border-box;
+        z-index: 9999;
+    }
+
+        nav ul li:last-child .dropdown-content a,
+        nav ul li:last-child .dropdown-content .logout-link {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            white-space: nowrap;
+        }
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+   DESKTOP DESIGN REMAINS UNCHANGED
+========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+        width: 100%;
+        height: 58px !important;
+        min-height: 58px !important;
+        padding: 0 !important;
+        box-sizing: border-box;
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: wrap;
+        position: relative;
+        overflow: visible;
+        z-index: 1000;
+    }
+
+
+    /* =========================
+       LOGO
+    ========================= */
+
+    #Image1 {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: auto;
+        height: 40px;
+        max-width: 42px;
+        flex-shrink: 0;
+    }
+
+    #logo {
+        margin-left: 8px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+        #logo img {
+            width: 38px !important;
+            height: 38px !important;
+            object-fit: contain;
+        }
+
+
+    /* =========================
+       LIBRARY NAME
+    ========================= */
+
+    .heading {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin-left: 7px !important;
+        font-size: 18px !important;
+        line-height: 1.2;
+        white-space: nowrap !important;
+        flex: 1;
+        min-width: 0;
+    }
+
+
+    /* =========================
+       DESKTOP NAVIGATION HIDDEN
+    ========================= */
+
+    nav {
+        display: none !important;
+    }
+
+
+    /* =========================
+       WELCOME CARD
+    ========================= */
+
+    .welcome-card {
+        position: absolute;
+        top: 70px !important;
+        left: 10px !important;
+        width: calc(100% - 20px) !important;
+        max-width: 270px !important;
+        box-sizing: border-box !important;
+        padding: 11px 13px !important;
+        z-index: 5 !important;
+    }
+
+    .welcome-label,
+    .welcome-label2 {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+    }
+
+    .welcome-label1 {
+        font-size: 15px !important;
+    }
+
+
+    /* =========================
+       MOBILE NAVIGATION
+    ========================= */
+
+    .dropdown {
+        position: relative;
+        z-index: 4000;
+    }
+
+    .dropdown-content {
+        top: calc(100% + 4px);
+        min-width: 145px;
+        max-width: calc(100vw - 20px);
+        box-sizing: border-box;
+        z-index: 99999;
+    }
+
+    .dropdown.open .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a,
+    .logout-link {
+        padding: 10px 12px;
+        font-size: 12px;
+        white-space: normal;
+    }
+
+    nav ul li:first-child .dropdown-content {
+        left: 0;
+        right: auto;
+    }
+
+    nav ul li:last-child .dropdown-content {
+        left: auto;
+        right: 0;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px auto;
+        box-sizing: border-box;
+    }
+
+    .hero {
+        position: relative;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto;
+        min-height: 470px;
+        padding: 45px 15px 60px;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        border-bottom-left-radius: 35px;
+        border-bottom-right-radius: 35px;
+    }
+
+        .hero .container {
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            padding: 0 15px !important;
+            margin: 0 !important;
+        }
+
+        .hero .text {
+            font-size: clamp(28px, 8vw, 40px);
+            line-height: 1.15;
+            word-break: normal;
+        }
+
+
+        /* =========================
+       HERO TITLE
+    ========================= */
+
+        .hero .container h2.text {
+            position: relative !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: auto !important;
+            margin: 125px 0 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+            font-size: 34px !important;
+            line-height: 1.12 !important;
+            text-align: center !important;
+            word-break: normal !important;
+            overflow-wrap: normal !important;
+        }
+
+
+        /* =========================
+       HERO DESCRIPTION
+    ========================= */
+
+        .hero .container p.text {
+            position: relative !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            margin: 15px auto 0 !important;
+            padding: 0 8px !important;
+            box-sizing: border-box !important;
+            font-size: 13px !important;
+            line-height: 1.45 !important;
+            text-align: center !important;
+        }
+
+
+    /* =========================
+       SEARCH
+    ========================= */
+
+    .search-container {
+        position: relative;
+        width: calc(100% - 20px) !important;
+        max-width: 360px !important;
+        margin: 25px auto 0 !important;
+        padding: 0 5px;
+        box-sizing: border-box !important;
+    }
+
+    .search-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 44px !important;
+        padding: 0 45px 0 15px !important;
+        box-sizing: border-box !important;
+        font-size: 14px !important;
+    }
+
+    .search-icon {
+        right: 10px !important;
+        left: auto !important;
+        font-size: 19px !important;
+    }
+
+
+    /* =========================
+       HERO BUTTON
+    ========================= */
+
+    .hero .bton,
+    .hero-button {
+        position: static;
+        left: auto;
+        top: auto;
+        margin: 35px auto 0;
+        display: block;
+        max-width: 90%;
+        box-sizing: border-box;
+    }
+
+    .get-started-btn {
+        max-width: 100%;
+        padding: 12px 28px;
+        font-size: 17px;
+    }
+
+
+    /* =========================
+       FEATURES
+    ========================= */
+
+    .features {
+        padding: 75px 15px 50px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .feature-container {
+        width: 100%;
+    }
+
+        .feature-container h2 {
+            font-size: 26px;
+            line-height: 1.25;
+            margin-bottom: 25px;
+        }
+
+    .feature-boxes {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        box-sizing: border-box;
+    }
+
+    .feature-card {
+        width: 100%;
+        max-width: 340px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+        .feature-card h3 {
+            font-size: 20px;
+        }
+
+
+    /* =========================
+       STATISTICS
+    ========================= */
+
+    .statistics {
+        margin-top: 0;
+        padding: 25px 15px 60px;
+        box-sizing: border-box;
+    }
+
+    .stats-container {
+        width: 100%;
+    }
+
+    .stats-boxes {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .stat-card {
+        width: 100%;
+        max-width: 300px;
+        padding: 20px 15px;
+        box-sizing: border-box;
+    }
+
+    .stat-number {
+        font-size: 34px;
+    }
+
+    .stat-title {
+        font-size: 16px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer {
+        width: 100%;
+        height: 32px !important;
+        min-height: 32px;
+        padding: 0 5px !important;
+        line-height: 32px !important;
+        font-size: 11px !important;
+        box-sizing: border-box;
+        white-space: nowrap !important;
+        overflow: hidden;
+    }
+
+
+    /* =========================
+       IMAGES
+    ========================= */
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media screen and (max-width: 380px) {
+
+    .heading {
+        font-size: 17px !important;
+    }
+
+    .hero .container h2.text {
+        font-size: 30px !important;
+        line-height: 1.1 !important;
+        margin-top: 125px !important;
+    }
+
+    .hero .container p.text {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+    }
+
+    .welcome-card {
+        max-width: 255px !important;
+    }
+
+    .mobile-navigation-icons {
+        top: 7px;
+        right: 6px;
+    }
+
+    .mobile-drawer-open,
+    .mobile-account-open {
+        width: 36px;
+        height: 36px;
+        font-size: 21px;
+    }
+
+    .mobile-library-drawer {
+        width: 90vw;
+    }
+
+    .mobile-main-menu {
+        min-height: 51px;
+        padding-left: 14px;
+        padding-right: 14px;
+        font-size: 14px;
+    }
+
+    .mobile-submenu a {
+        padding-left: 43px;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP DROPDOWN CLICK / HOVER FIX
+========================================================= */
+
+@media screen and (min-width: 768px) {
+
+    header {
+        position: relative;
+        z-index: 10000;
+    }
+
+    nav {
+        position: relative;
+        z-index: 10001;
+    }
+
+        nav ul {
+            position: relative;
+            z-index: 10001;
+        }
+
+    .dropdown {
+        position: relative;
+        z-index: 10002;
+    }
+
+    .dropdown-content {
+        z-index: 10003 !important;
+        pointer-events: auto !important;
+    }
+
+        .dropdown-content a,
+        .dropdown-content .logout-link {
+            position: relative;
+            z-index: 10004;
+            pointer-events: auto !important;
+            cursor: pointer;
+        }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown.open .dropdown-content {
+        display: block;
+    }
+}
+

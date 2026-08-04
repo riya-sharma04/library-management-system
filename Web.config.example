@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<configuration>
+
+  <connectionStrings>
+    <add name="ABC"
+         connectionString="data source=127.0.0.1; database=emp; uid=YOUR_MYSQL_USERNAME; pwd=YOUR_MYSQL_PASSWORD" />
+  </connectionStrings>
+
+  <system.web>
+    <compilation debug="true" targetFramework="4.5.2" />
+    <httpRuntime targetFramework="4.5.2" />
+  </system.web>
+
+</configuration>

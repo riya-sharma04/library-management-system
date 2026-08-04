@@ -1,0 +1,22 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build output
+obj/
+Debug/
+Release/
+
+# Temporary files
+*.tmp
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
+# Local configuration backup
+Web.config.backup
+
+# Local database configuration
+Web.config
