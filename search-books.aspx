@@ -33,8 +33,8 @@
                 <span>Details</span>
                 <div class="dropdown-content">
                     <asp:HyperLink ID="HyperLink2" runat="server" Text="Hyperlink" NavigateUrl="~/book-details.aspx">Manage Book</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink3" runat="server" Text="Hyperlink" NavigateUrl="~/student-details.aspx">Student Details</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink4" runat="server" Text="Hyperlink" NavigateUrl="~/teacher-details.aspx">Teacher Details</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server" Text="Hyperlink" NavigateUrl="~/student-details.aspx">Manage Student</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink4" runat="server" Text="Hyperlink" NavigateUrl="~/teacher-details.aspx">Manage Teacher </asp:HyperLink>
                 </div>
             </div>
           </li>
