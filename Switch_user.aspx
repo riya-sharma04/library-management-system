@@ -29,7 +29,8 @@
              <div class="container">
                     <div class="content">
                     <asp:Label ID="Label1" runat="server" Text="👤 User Name" CssClass="mylable"></asp:Label>
-                    <asp:TextBox ID="TextBox1" runat="server" CssClass="myTextbox" placeholder="Enter Username" ></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" runat="server" CssClass="myTextbox" placeholder="Enter Username" onkeydown="if(event.key === 'Enter'){ event.preventDefault(); document.getElementById('TextBox2').focus(); return false; }"> </asp:TextBox>
+
                     <asp:Label ID="Label2" runat="server" Text="🔑 Password" CssClass="mylable"></asp:Label>
                     <div class="password-container">
 
