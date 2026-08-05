@@ -15,64 +15,80 @@ public partial class login_page : System.Web.UI.Page
 
     }
 
-
-    protected void Button2_Click(object sender, EventArgs e)
+protected void Button2_Click(object sender, EventArgs e)
+{
+    // Check username
+    if (TextBox1.Text.Trim() == "")
     {
-        MySqlConnection CONN = new MySqlConnection();
-        string AA = ConfigurationManager.ConnectionStrings["ABC"].ConnectionString;
-        CONN = new MySqlConnection(AA);
+        Response.Write("<script>alert('Please Enter USERNAME 👤!')</script>");
+        TextBox1.Focus();
+        return;
+    }
 
-        MySqlCommand CMD = new MySqlCommand();
-        CMD.Connection = CONN;
-        CMD.CommandText = "SELECT* FROM emp.login_table WHERE username = '" + TextBox1.Text + "' AND password = '" + TextBox2.Text + "'";
+    // Check password
+    if (TextBox2.Text == "")
+    {
+        Response.Write("<script>alert('Please Enter PASSWORD 🔑!')</script>");
+        TextBox2.Focus();
+        return;
+    }
 
-        MySqlDataAdapter DA = new MySqlDataAdapter();
-        DA.SelectCommand = CMD;
+    string AA = ConfigurationManager.ConnectionStrings["ABC"].ConnectionString;
 
-        DataSet DS = new DataSet();
+    using (MySqlConnection CONN = new MySqlConnection(AA))
+    {
+        CONN.Open();
 
-        DA.Fill(DS);
-        if (TextBox1.Text == "")
+        // First check username
+        MySqlCommand checkUser = new MySqlCommand(
+            "SELECT COUNT(*) FROM emp.login_table WHERE username = @username",
+            CONN);
+
+        checkUser.Parameters.AddWithValue("@username", TextBox1.Text.Trim());
+
+        int userExists = Convert.ToInt32(checkUser.ExecuteScalar());
+
+        // ❌ Username incorrect
+        if (userExists == 0)
         {
-            Response.Write("<script>alert('Please Enter USERNAME 👤!')</script>");
+            Response.Write("<script>alert('❌ Incorrect USERNAME')</script>");
+
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+
             TextBox1.Focus();
             return;
         }
-        if (TextBox2.Text == "")
-        {
-            Response.Write("<script>alert('Please Enter PASSSWORD 🔑!')</script>");
-            TextBox2.Focus();
-            return;
-        }
 
-        // ✅ If both filled, now check for validity
-        if (DS.Tables[0].Rows.Count > 0)
+        // Username correct → now check password
+        MySqlCommand checkPassword = new MySqlCommand(
+            "SELECT COUNT(*) FROM emp.login_table WHERE username = @username AND password = @password",
+            CONN);
+
+        checkPassword.Parameters.AddWithValue("@username", TextBox1.Text.Trim());
+        checkPassword.Parameters.AddWithValue("@password", TextBox2.Text);
+
+        int loginSuccess = Convert.ToInt32(checkPassword.ExecuteScalar());
+
+        // ✅ Username + Password correct
+        if (loginSuccess > 0)
         {
-            string userName = TextBox1.Text;
-            // Set the session variable
-            Session["UserName"] = userName;
+            Session["UserName"] = TextBox1.Text.Trim();
             Response.Redirect("index.aspx");
         }
         else
         {
-            // ✅ Check if username exists (additional check)
-            CONN.Open(); // <--- Add this
-            MySqlCommand checkUser = new MySqlCommand("SELECT COUNT(*) FROM emp.login_table WHERE username = @username", CONN);
-            checkUser.Parameters.AddWithValue("@username", TextBox1.Text);
-            int userExists = Convert.ToInt32(checkUser.ExecuteScalar());
-            CONN.Close(); // <--- Add this
+            // ❌ Password incorrect
+            Response.Write("<script>alert('🔒 Incorrect PASSWORD')</script>");
 
-            if (userExists == 0)
-            {
-                Response.Write("<script>alert(' ❌ Incorrect USERNAME')</script>");
-            }
-            else
-            {
-                Response.Write("<script>alert(' 🔒 Incorrect PASSWORD')</script>");
-            }
+            // Username stays
+            // Password becomes blank
+            TextBox2.Text = "";
+
+            TextBox2.Focus();
         }
     }
-
+}
     protected void Button1_Click(object sender, EventArgs e)
     {
         TextBox1.Text = "";
