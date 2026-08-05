@@ -17,18 +17,18 @@ public partial class login_page : System.Web.UI.Page
 
 protected void Button2_Click(object sender, EventArgs e)
 {
-    // Check username
-    if (TextBox1.Text.Trim() == "")
+    // Username validation
+    if (TextBox1.Text == "")
     {
-        Response.Write("<script>alert('Please Enter USERNAME 👤!')</script>");
+        Response.Write("<script>alert('Please Enter USERNAME 👤!');</script>");
         TextBox1.Focus();
         return;
     }
 
-    // Check password
+    // Password validation
     if (TextBox2.Text == "")
     {
-        Response.Write("<script>alert('Please Enter PASSWORD 🔑!')</script>");
+        Response.Write("<script>alert('Please Enter PASSWORD 🔑!');</script>");
         TextBox2.Focus();
         return;
     }
@@ -39,54 +39,50 @@ protected void Button2_Click(object sender, EventArgs e)
     {
         CONN.Open();
 
-        // First check username
+        // Check username
         MySqlCommand checkUser = new MySqlCommand(
             "SELECT COUNT(*) FROM emp.login_table WHERE username = @username",
             CONN);
 
-        checkUser.Parameters.AddWithValue("@username", TextBox1.Text.Trim());
+        checkUser.Parameters.AddWithValue("@username", TextBox1.Text);
 
         int userExists = Convert.ToInt32(checkUser.ExecuteScalar());
 
-        // ❌ Username incorrect
+        // ❌ Incorrect username
         if (userExists == 0)
         {
-            Response.Write("<script>alert('❌ Incorrect USERNAME')</script>");
-
             TextBox1.Text = "";
-            TextBox2.Text = "";
+
+            Response.Write("<script>alert('❌ Incorrect USERNAME');</script>");
 
             TextBox1.Focus();
             return;
         }
 
-        // Username correct → now check password
-        MySqlCommand checkPassword = new MySqlCommand(
+        // Check username + password
+        MySqlCommand checkLogin = new MySqlCommand(
             "SELECT COUNT(*) FROM emp.login_table WHERE username = @username AND password = @password",
             CONN);
 
-        checkPassword.Parameters.AddWithValue("@username", TextBox1.Text.Trim());
-        checkPassword.Parameters.AddWithValue("@password", TextBox2.Text);
+        checkLogin.Parameters.AddWithValue("@username", TextBox1.Text);
+        checkLogin.Parameters.AddWithValue("@password", TextBox2.Text);
 
-        int loginSuccess = Convert.ToInt32(checkPassword.ExecuteScalar());
+        int loginValid = Convert.ToInt32(checkLogin.ExecuteScalar());
 
-        // ✅ Username + Password correct
-        if (loginSuccess > 0)
+        // ❌ Incorrect password
+        if (loginValid == 0)
         {
-            Session["UserName"] = TextBox1.Text.Trim();
-            Response.Redirect("index.aspx");
-        }
-        else
-        {
-            // ❌ Password incorrect
-            Response.Write("<script>alert('🔒 Incorrect PASSWORD')</script>");
-
-            // Username stays
-            // Password becomes blank
             TextBox2.Text = "";
 
+            Response.Write("<script>alert('🔒 Incorrect PASSWORD');</script>");
+
             TextBox2.Focus();
+            return;
         }
+
+        // ✅ Login successful
+        Session["UserName"] = TextBox1.Text;
+        Response.Redirect("index.aspx");
     }
 }
     protected void Button1_Click(object sender, EventArgs e)
