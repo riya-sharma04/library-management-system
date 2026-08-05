@@ -31,7 +31,7 @@
             <div class="dropdown">
                 <span>Details</span>
                 <div class="dropdown-content">
-                    <asp:HyperLink ID="HyperLink2" runat="server" Text="Hyperlink" NavigateUrl="~/book-details.aspx">Manage Details</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink2" runat="server" Text="Hyperlink" NavigateUrl="~/book-details.aspx">Manage Book</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink3" runat="server" Text="Hyperlink" NavigateUrl="~/student-details.aspx">Manage Student </asp:HyperLink>--%>
                 </div>
             </div>
