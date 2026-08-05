@@ -84,7 +84,7 @@
 </div>
        
         <asp:Panel ID="Panel1" runat="server" DefaultButton="btnSearch">
-            <h2 class="head">🧾 FINE COLLECTION </h2>
+            <h2 class="head">🧾 LATE FEE RECORDS </h2>
              <div class="container">
                  <asp:Label ID="Label1" runat="server" Text="SEARCH" CssClass="label"></asp:Label>
                                   <div class="search-wrapper">
