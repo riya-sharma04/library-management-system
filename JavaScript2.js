@@ -34,16 +34,21 @@
 });
 
 // Show / Hide Password
-function togglePassword() {
-    var txt = document.getElementById("TextBox2");
-    var eye = document.getElementById("eyeIcon");
+function togglePassword(textBoxId, eyeId) {
+
+    var txt = document.getElementById(textBoxId);
+    var eye = document.getElementById(eyeId);
 
     if (txt.type === "password") {
+
         txt.type = "text";
         eye.className = "fa-solid fa-eye-slash";
+
     }
     else {
+
         txt.type = "password";
         eye.className = "fa-solid fa-eye";
+
     }
 }
