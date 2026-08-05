@@ -24,7 +24,7 @@
           <span class="heading">VIDHYANT LIBRARY</span>
     <nav>
       <ul>
-        <li><asp:HyperLink ID="HyperLink1" runat="server" Text="Hyperlink" NavigateUrl="~/index.aspx" CssClass="active">⌂ Home</asp:HyperLink></li>
+        <li><asp:HyperLink ID="HyperLink1" runat="server" Text="Hyperlink" NavigateUrl="~/home-page.aspx" CssClass="active">⌂ Home</asp:HyperLink></li>
         <li>
       <div class="dropdown no-arrow">
           <span class="menu-icon"> ☰ </span>
