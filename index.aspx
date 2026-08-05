@@ -84,33 +84,7 @@
     color: #fff;
     display: block;
 }
-/*        .welcome-card{
-
-    position:absolute;
-
-    top:80px;
-
-    left:15px;
-
-    width:250px;
-
-    background:rgba(8,35,70,.45);
-
-    backdrop-filter:blur(12px);
-
-    border-radius:8px;
-
-    padding:15px 18px;
-
-    border:1px solid rgba(255,255,255,.15);
-
-    box-shadow:0 8px 20px rgba(0,0,0,.30);
-
-    z-index:5;
-
-}*/
-       
-        .hero .text{
+  .hero .text{
     position: relative;
     color: #FFFFFF;
     text-shadow: 0 4px 15px rgba(0,0,0,.55);
@@ -170,7 +144,7 @@
               <div class="dropdown">
                 <span>Book Tools</span>
                 <div class="dropdown-content">
-                    <asp:HyperLink ID="HyperLink8" runat="server" Text="Hyperlink" NavigateUrl="~/issued-book-details.aspx">Issued Book Records</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink8" runat="server" Text="Hyperlink" NavigateUrl="~/issued-book-details.aspx">Issued Book </asp:HyperLink>
                     <asp:HyperLink ID="HyperLink9" runat="server" Text="Hyperlink" NavigateUrl="~/search-books.aspx">Book Records</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink10" runat="server" Text="Hyperlink" NavigateUrl="~/search-students.aspx"> Student Records</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink16" runat="server" Text="Hyperlink" NavigateUrl="~/search-teacher.aspx">Teacher Records</asp:HyperLink>
