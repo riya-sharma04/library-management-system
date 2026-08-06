@@ -108,7 +108,7 @@
 </div>
 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<asp:Label ID="Label3" runat="server" Text="Status" CssClass="label" Width="60px"></asp:Label>
                  &nbsp;<asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" CssClass="DD" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
-                     <asp:ListItem Value="select">select</asp:ListItem>
+                     <asp:ListItem>ALL</asp:ListItem>
                      <asp:ListItem>RETURNED</asp:ListItem>
                      <asp:ListItem>ISSUED</asp:ListItem>
                  </asp:DropDownList>
