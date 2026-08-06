@@ -43,7 +43,7 @@
         placeholder="Enter Password">
     </asp:TextBox>
 
-    <span class="toggle-password" onclick="togglePassword()">
+    <span class="toggle-password" onclick="togglePassword('TextBox2','eyeIcon2')">
         <i id="eyeIcon" class="fa-solid fa-eye"></i>
     </span>
 </div>    
