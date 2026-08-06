@@ -133,7 +133,7 @@ public partial class search_books : System.Web.UI.Page
 
         DA.Fill(DS);
         DropDownList5.Items.Clear();
-        DropDownList5.Items.Add("Select");
+        DropDownList5.Items.Add("All");
         for (int i = 0; i < DS.Tables[0].Rows.Count; i++)
         {
             DropDownList5.Items.Add(DS.Tables[0].Rows[i][0].ToString());
@@ -149,7 +149,7 @@ public partial class search_books : System.Web.UI.Page
         string dropdown5 = DropDownList5.SelectedValue;
         MySqlCommand CMD1 = new MySqlCommand();
         CMD1.Connection = CONN;
-        if (dropdown5 == "Select")
+        if (dropdown5 == "All")
         {
             CMD1.CommandText = @"SELECT * FROM emp.books_details ORDER BY acc_no";
         }
