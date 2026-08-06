@@ -38,7 +38,7 @@ public partial class fee_collection : System.Web.UI.Page
         MySqlCommand CMD1 = new MySqlCommand();
         CMD1.Connection = CONN;
 
-        CMD1.CommandText = @"SELECT * FROM emp.issue_book_details  ORDER BY issue_no";
+        CMD1.CommandText = @"SELECT * FROM emp.issue_book_details WHERE member_type = 'student' ORDER BY issue_no";
         MySqlDataAdapter DA = new MySqlDataAdapter(CMD1);
         DataTable DT = new DataTable();
         DA.Fill(DT);
@@ -72,7 +72,9 @@ public partial class fee_collection : System.Web.UI.Page
         }
         else
         {
-            CMD2.CommandText = "SELECT * FROM emp.issue_book_details WHERE member_type = 'student' ORDER BY issue_no";
+             fullTable();
+             CONN.Close();
+             return;
         }
         MySqlDataAdapter DA = new MySqlDataAdapter(CMD2);
         DataTable DT = new DataTable();
@@ -114,7 +116,7 @@ public partial class fee_collection : System.Web.UI.Page
         string issueStatus = DropDownList2.SelectedValue;
         MySqlCommand CMD1 = new MySqlCommand();
         CMD1.Connection = CONN;
-        if (issueStatus == "Select")
+        if (DropDownList2.SelectedIndex == 0)
         {
             CMD1.CommandText = "SELECT * FROM emp.issue_book_details WHERE member_type = 'student' ORDER BY issue_no";
         }
