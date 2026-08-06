@@ -88,7 +88,18 @@ nav a {
 .menu-icon {
     font-size: 24px;
     cursor: pointer;
-    margin-left: 80px;
+    margin-left: 5px;
+}
+
+    .menu-icon .dropdown-content {
+        right: 50px;
+        left: auto;
+        z-index: 1000;
+    }
+
+.no-arrow .dropdown-content {
+    right: 10px;
+    left: auto;
 }
 
 .no-arrow > span::after {
