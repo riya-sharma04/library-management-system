@@ -123,7 +123,7 @@ public partial class search_teacher : System.Web.UI.Page
 
         DA.Fill(DS);
         DropDownList1.Items.Clear();
-        DropDownList1.Items.Add("Select");
+        DropDownList1.Items.Add("All");
 
         for (int i = 0; i < DS.Tables[0].Rows.Count; i++)
         {
@@ -149,7 +149,7 @@ public partial class search_teacher : System.Web.UI.Page
 
         DA.Fill(DS);
         DropDownList3.Items.Clear();
-        DropDownList3.Items.Add("Select");
+        DropDownList3.Items.Add("All");
 
         for (int i = 0; i < DS.Tables[0].Rows.Count; i++)
         {
@@ -173,7 +173,7 @@ public partial class search_teacher : System.Web.UI.Page
 
         DA.Fill(DS);
         DropDownList4.Items.Clear();
-        DropDownList4.Items.Add("Select");
+        DropDownList4.Items.Add("All");
 
         for (int i = 0; i < DS.Tables[0].Rows.Count; i++)
         {
@@ -198,7 +198,7 @@ public partial class search_teacher : System.Web.UI.Page
 
         DA.Fill(DS);
         DropDownList6.Items.Clear();
-        DropDownList6.Items.Add("Select");
+        DropDownList6.Items.Add("All");
 
         for (int i = 0; i < DS.Tables[0].Rows.Count; i++)
         {
@@ -215,7 +215,7 @@ public partial class search_teacher : System.Web.UI.Page
         string dropdown1 = DropDownList1.SelectedValue;
         MySqlCommand CMD1 = new MySqlCommand();
         CMD1.Connection = CONN;
-        if (dropdown1 == "Select")
+        if (dropdown1 == "All")
         {
             CMD1.CommandText = @"SELECT * FROM emp.teachers_details ORDER BY teacher_id";
         }
@@ -243,7 +243,7 @@ public partial class search_teacher : System.Web.UI.Page
         string dropdown3 = DropDownList3.SelectedValue;
         MySqlCommand CMD1 = new MySqlCommand();
         CMD1.Connection = CONN;
-        if (dropdown3 == "Select")
+        if (dropdown3 == "All")
         {
             CMD1.CommandText = @"SELECT * FROM emp.teachers_details ORDER BY teacher_id";
         }
@@ -270,7 +270,7 @@ public partial class search_teacher : System.Web.UI.Page
         string dropdown4 = DropDownList4.SelectedValue;
         MySqlCommand CMD1 = new MySqlCommand();
         CMD1.Connection = CONN;
-        if (dropdown4 == "Select")
+        if (dropdown4 == "All")
         {
             CMD1.CommandText = @"SELECT * FROM emp.teachers_details ORDER BY teacher_id";
         }
@@ -299,7 +299,7 @@ public partial class search_teacher : System.Web.UI.Page
         string dropdown6 = DropDownList6.SelectedValue;
         MySqlCommand CMD1 = new MySqlCommand();
         CMD1.Connection = CONN;
-        if (dropdown6 == "Select")
+        if (dropdown6 == "All")
         {
             CMD1.CommandText = @"SELECT * FROM emp.teachers_details ORDER BY teacher_id";
         }
