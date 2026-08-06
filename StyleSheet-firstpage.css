@@ -1,4 +1,4 @@
-﻿body {
+body {
     position: relative;
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
@@ -29,26 +29,43 @@ header {
     left: 85px;
 }
 
-nav ul {
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    width: auto;
     position: relative;
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-    margin-top: 5px;
 }
 
-nav a {
-    position: relative;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-    nav a:hover {
+    nav ul {
         position: relative;
-        text-decoration: underline;
-        color: #D6ECFF;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 1rem;
+        margin: 5px 0 0 0;
+        padding: 0;
     }
+
+        nav ul li:last-child {
+            position: relative;
+            margin-left: 40px;
+            padding: 0;
+        }
+
+    nav a {
+        position: relative;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        nav a:hover {
+            position: relative;
+            text-decoration: underline;
+            color: #D6ECFF;
+        }
 
 .dropdown > span::after {
     content: "\2304";
@@ -62,15 +79,20 @@ nav a {
     display: block;
     font-size: 24px;
     line-height: 1;
-    cursor: pointer;
-    color: #ffffff;
     padding: 5px;
     margin: 0;
+    cursor: pointer;
+    color: #ffffff;
 }
 
-.no-arrow > span::after {
-    display: none;
+.no-arrow {
+    position: relative;
+    display: inline-block;
 }
+
+    .no-arrow > span::after {
+        display: none;
+    }
 
 .container {
     position: relative;
@@ -147,6 +169,30 @@ nav a {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* =========================================================
+   MENU ICON DROPDOWN
+========================================================= */
+
+nav ul li:last-child .dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    min-width: 100px;
+    width: 100px;
+    background-color: white;
+    box-sizing: border-box;
+    z-index: 9999;
+}
+
+    nav ul li:last-child .dropdown-content a,
+    nav ul li:last-child .dropdown-content .logout-link {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        white-space: nowrap;
+    }
 
 .dropdown-content a,
 .logout-link {
@@ -371,72 +417,9 @@ nav a {
 
 
 /* =========================================================
-   DESKTOP NAVIGATION
-========================================================= */
-
-@media screen and (min-width: 601px) {
-
-    nav {
-        width: auto;
-        position: relative;
-    }
-
-        nav ul {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin: 5px 0 0 0;
-            padding: 0;
-        }
-
-            nav ul li:last-child {
-                position: relative;
-                margin-left: 40px;
-                padding: 0;
-            }
-
-    .no-arrow {
-        position: relative;
-        display: inline-block;
-    }
-
-    .menu-icon {
-        display: block;
-        font-size: 24px;
-        line-height: 1;
-        padding: 5px;
-        margin: 0;
-        cursor: pointer;
-        color: #ffffff;
-    }
-
-    nav ul li:last-child .dropdown-content {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: auto;
-        min-width: 170px;
-        width: 170px;
-        background-color: white;
-        box-sizing: border-box;
-        z-index: 9999;
-    }
-
-        nav ul li:last-child .dropdown-content a,
-        nav ul li:last-child .dropdown-content .logout-link {
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            white-space: nowrap;
-        }
-}
-
-
-/* =========================================================
    MOBILE RESPONSIVE
    DESKTOP DESIGN REMAINS UNCHANGED
 ========================================================= */
-
 @media screen and (max-width: 767px) {
 
     html,
@@ -445,8 +428,6 @@ nav a {
         max-width: 100%;
         overflow-x: hidden;
     }
-
-
     /* =========================
        HEADER
     ========================= */
@@ -464,8 +445,6 @@ nav a {
         overflow: visible;
         z-index: 1000;
     }
-
-
     /* =========================
        LOGO
     ========================= */
@@ -491,8 +470,6 @@ nav a {
             height: 38px !important;
             object-fit: contain;
         }
-
-
     /* =========================
        LIBRARY NAME
     ========================= */
@@ -508,8 +485,6 @@ nav a {
         flex: 1;
         min-width: 0;
     }
-
-
     /* =========================
        DESKTOP NAVIGATION HIDDEN
     ========================= */
@@ -517,8 +492,6 @@ nav a {
     nav {
         display: none !important;
     }
-
-
     /* =========================
        WELCOME CARD
     ========================= */
@@ -543,8 +516,6 @@ nav a {
     .welcome-label1 {
         font-size: 15px !important;
     }
-
-
     /* =========================
        MOBILE NAVIGATION
     ========================= */
@@ -582,8 +553,6 @@ nav a {
         left: auto;
         right: 0;
     }
-
-
     /* =========================
        HERO
     ========================= */
@@ -621,8 +590,6 @@ nav a {
             line-height: 1.15;
             word-break: normal;
         }
-
-
         /* =========================
        HERO TITLE
     ========================= */
@@ -642,8 +609,6 @@ nav a {
             word-break: normal !important;
             overflow-wrap: normal !important;
         }
-
-
         /* =========================
        HERO DESCRIPTION
     ========================= */
@@ -662,8 +627,6 @@ nav a {
             line-height: 1.45 !important;
             text-align: center !important;
         }
-
-
     /* =========================
        SEARCH
     ========================= */
@@ -691,8 +654,6 @@ nav a {
         left: auto !important;
         font-size: 19px !important;
     }
-
-
     /* =========================
        HERO BUTTON
     ========================= */
@@ -713,8 +674,6 @@ nav a {
         padding: 12px 28px;
         font-size: 17px;
     }
-
-
     /* =========================
        FEATURES
     ========================= */
@@ -754,8 +713,6 @@ nav a {
         .feature-card h3 {
             font-size: 20px;
         }
-
-
     /* =========================
        STATISTICS
     ========================= */
@@ -792,8 +749,6 @@ nav a {
     .stat-title {
         font-size: 16px;
     }
-
-
     /* =========================
        FOOTER
     ========================= */
@@ -809,8 +764,6 @@ nav a {
         white-space: nowrap !important;
         overflow: hidden;
     }
-
-
     /* =========================
        IMAGES
     ========================= */
