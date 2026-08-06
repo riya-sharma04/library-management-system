@@ -131,7 +131,7 @@ public partial class search_students : System.Web.UI.Page
 
         DA.Fill(DS);
         DropDownList4.Items.Clear();
-        DropDownList4.Items.Add("Select");
+        DropDownList4.Items.Add("All");
 
         for (int i = 0; i < DS.Tables[0].Rows.Count; i++)
         {
@@ -155,7 +155,7 @@ public partial class search_students : System.Web.UI.Page
 
         DA.Fill(DS);
         DropDownList5.Items.Clear();
-        DropDownList5.Items.Add("Select");
+        DropDownList5.Items.Add("All");
 
         for (int i = 0; i < DS.Tables[0].Rows.Count; i++)
         {
@@ -173,7 +173,7 @@ public partial class search_students : System.Web.UI.Page
         string dropdown4 = DropDownList4.SelectedValue;
         MySqlCommand CMD1 = new MySqlCommand();
         CMD1.Connection = CONN;
-        if (dropdown4 == "Select")
+        if (dropdown4 == "All")
         {
             CMD1.CommandText = @"SELECT * FROM emp.students_details ORDER BY clg_roll_no";
         }
@@ -200,7 +200,7 @@ public partial class search_students : System.Web.UI.Page
         string dropdown5 = DropDownList5.SelectedValue;
         MySqlCommand CMD1 = new MySqlCommand();
         CMD1.Connection = CONN;
-        if (dropdown5 == "Select")
+        if (dropdown5 == "All")
         {
             CMD1.CommandText = @"SELECT * FROM emp.students_details ORDER BY clg_roll_no";
         }
